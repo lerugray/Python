@@ -22,33 +22,17 @@ if not os.path.exists(save_dir):
     os.makedirs(save_dir)
 
 with open("instr.txt") as f:
-    line = f.readline()
-    out = line.strip("\n")
+    lines = f.readlines()
 
-    while line:
-        line = f.readline()
-        out = line.strip("\n")
-        start_pos = start_x, start_y = [int(x) for x in out.split(",")]
-        counter_size = w, h = [int(x) for x in out.split(",")]
-        line = f.readline()
-        out = line.strip("\n")
-        major_columns = int(out)
-        line = f.readline()
-        out = line.strip("\n")
-        major_columns_w = int(out)
-        line = f.readline()
-        out = line.strip("\n")
-        major_rows = int(out)
-        line = f.readline()
-        out = line.strip("\n")
-        major_rows_h = int(out)
-        line = f.readline()
-        out = line.strip("\n")
-        columns = int(out)
-        line = f.readline()
-        out = line.strip("\n")
-        line = f.readline()
-        rows = int(out)
+start_pos = start_x, start_y = [int(x) for x in lines[0].split(",")]
+counter_size = w, h = [int(x) for x in lines[1].split(",")]
+major_columns = int(lines[2])
+major_columns_w = int(lines[3])
+major_rows = int(lines[4])
+major_rows_h = int(lines[5])
+columns = int(lines[6])
+rows = int(lines[7])
+
 
 ###################################
 #
